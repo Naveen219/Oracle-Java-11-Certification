@@ -1,8 +1,18 @@
+import java.util.Arrays;
+import java.util.TreeSet;
+
 public class EnumDemo {
     enum Machine {
-        AUTO("Truck"), MEDICAL("Scanner");
-        private String type;
+        // fields are static final by default
+        AUTO("Truck"), MEDICAL("Scanner"), DEFAULT;
+        protected String type;
+
+        // constructors are private by default
+        Machine() {
+            System.out.println("I'm the default constructor");
+        }
         Machine(String type) {
+            System.out.println("I'm the parameterized constructor");
             this.type = type;
         }
         private void setType(String type) {
@@ -11,6 +21,7 @@ public class EnumDemo {
         String getType() {
             return type;
         }
+
 
     }
 
