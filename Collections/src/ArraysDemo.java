@@ -83,7 +83,6 @@ public class ArraysDemo {
 
         System.out.println(colorsArray.getClass().getName());
 
-        TreeMap
 
     }
 }
