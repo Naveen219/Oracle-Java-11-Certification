@@ -22,15 +22,14 @@ public class FunctionalInterfaceDemo {
 
 
         // Consumer Demo
-        Consumer<Integer> consumer = (a) ->{ System.out.print(a + 5 + " ");};
+        System.out.println("Consumer Demo");
+        Consumer<Integer> consumer = System.out::print;
+        Consumer<Integer> consumer2 = consumer.andThen((a) -> System.out.println( " " + a * 5));
 
-        numbers.stream().forEach(consumer);
+        numbers.stream().forEach(consumer2);
 
 
         // Optional Demo
-
-
-
 
 
         List<Employee> employeeList = List.of(

@@ -34,8 +34,6 @@ class Child extends Parent {
         this.name = name;
         System.out.println("I'm the parameterized constructor of the child class");
     }
-
-
 }
 
 public class SuperKeywordDemo {
