@@ -10,12 +10,16 @@ class Sing {
 }
 
 
+
 @Dance(value = {2, 3}, rhythm =  23)
 @interface Cricket {
     // all elements are public static final by default, just like elements in an interface
      int a = 23;
      // default, default value should be a compile time a constant, cannot be a null or new String()
     // "" is a valid default value
+    // the element type must be primitive type, a String, a Class, an enum, another
+    // annotation or an array of any of these types. Note that this excludes wrapper
+    // classes and arrays of arrays
      String batsman() default "Sehwag";
      //String batsman default "";
 //     String batsman();

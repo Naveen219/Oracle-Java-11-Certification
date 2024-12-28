@@ -16,7 +16,14 @@ class Parent {
         this.name = name;
         System.out.println("I'm the parameterized constructor of the child class");
     }
+    public void print() {
+        System.out.println("Hello, I'm the print method in the parent class");
+    }
+     static class SubClass  {
+       public void print() {
 
+       }
+     }
 
 }
 
@@ -33,6 +40,9 @@ class Child extends Parent {
         this();
         this.name = name;
         System.out.println("I'm the parameterized constructor of the child class");
+    }
+    public void print() {
+        System.out.println("Hello, I'm the print method in the child class");
     }
 }
 

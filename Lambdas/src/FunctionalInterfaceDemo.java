@@ -16,7 +16,7 @@ public class FunctionalInterfaceDemo {
                 .stream()
                 .filter(evenNumberFilter.and((a) -> a > 10))
                 .collect(Collectors.toList());
-        evenNumbers.forEach(System.out::print);
+        evenNumbers.forEach((x) -> System.out.print(x + " " ));
 
         System.out.println();
 
@@ -58,7 +58,16 @@ public class FunctionalInterfaceDemo {
 
         Arrays.stream(employees).forEach(System.out::println);
 
+        List<Employee> employeeList1 = Arrays.asList(employees);
 
+        List<Employee> sortedEmployeesList = employeeList1.stream().sorted((e1, e2) -> {
+            // Sort employees based on age
+            return Integer.compare(e1.age, e2.age);
+        }).collect(Collectors.toList());
+
+
+        System.out.println("Employee list sorted based on the age: ");
+        sortedEmployeesList.forEach(System.out::println);
         // searching in streams
 
         Predicate<Integer> searchFilter = (a) -> a == 2;
