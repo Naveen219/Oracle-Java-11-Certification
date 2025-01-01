@@ -49,15 +49,7 @@ public class ThreadDemo {
         runThread3.start();
 
 
-        LocalDateTime ldt = LocalDateTime.of(2022, 12,23, 23, 1);
 
-        System.out.println(ldt);
-
-        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yy MMM dd HH:mm:ss");
-
-        String formattedDate = ldt.format(dateTimeFormatter);
-
-        System.out.println(formattedDate);
 
     }
 

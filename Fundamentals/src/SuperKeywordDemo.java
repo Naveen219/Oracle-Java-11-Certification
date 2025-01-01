@@ -19,12 +19,11 @@ class Parent {
     public void print() {
         System.out.println("Hello, I'm the print method in the parent class");
     }
-     static class SubClass  {
+        static class SubClass  {
        public void print() {
 
        }
      }
-
 }
 
 class Child extends Parent {
