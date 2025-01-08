@@ -3,8 +3,8 @@ import java.io.IOException;
 
 public class PlayWithFiles {
     public static void main(String[] args) {
-        File file1 = new File("IO/../../sample.txt");
-        File file2 = new File("IO/examples");
+        File file1 = new File("IO/examples/sample.txt");
+        File file2 = new File("examples");
         try {
             // Return true : If the file doesn't exist
             // Returns false: If the file already exists
@@ -37,6 +37,11 @@ public class PlayWithFiles {
             System.out.println("Does Exist: " + file2.exists());
             System.out.println("is Directory: " + file2.isDirectory());
             System.out.println("Is File: " + file2.isFile());
+
+            System.out.println("File Name: " + file2.getName());
+
+            //returns null as the parent doesn't exist
+            System.out.println("Parent Name: " + file2.getParent());
 
             File file3 = new File("IO/emptyFolder");
 
