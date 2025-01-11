@@ -5,6 +5,16 @@ import java.nio.file.Paths;
 import java.util.Date;
 
 public class PlayWithPaths {
+    /**
+     * Notes
+     * If a path starts with a forward slash (/), it is absolute, with / as the root directory. Examples:
+     * /bird/parrot.png and /bird/../data/./info
+     *
+     * If a path starts with a drive letter (c:), it is absolute, with the drive letter as the root directory.
+     *
+     * Examples: c:/bird/parrot.png and d:/bird/../data/./info
+     * Otherwise, it is a relative path. Examples: bird/parrot.png and bird/../data/./info
+     */
     public static void main(String[] args)  {
         Path abcPath = Paths.get("IO/examples/paths/abc.txt");
         Path xyzPath = Path.of("IO/examples/paths/xyz.txt");
@@ -15,12 +25,17 @@ public class PlayWithPaths {
                 Paths.get("C:/Users/Administrator/Desktop/Java 11 Certification/coding-practice/IO/examples/paths/abc.txt");
 
         try {
+
             Files.list(Paths.get("IO/examples/paths")).forEach((file) -> {
                 try {
 
                     System.out.println("<------------" + "Operations on " + file.getFileName() + " " + "--------->");
                     System.out.println("Is Absolute: " + file.isAbsolute());
+                    // returns full path of the containing directory
+                    // returns null if operated on the root path or at the top of a relative path
                     System.out.println("Parent: " + file.getParent());
+                    // returns the root element of the file within the file system or null if the path
+                    // is a relative path
                     System.out.println("Root: " + file.getRoot());
                     System.out.println("Is Symbolic Link: " + Files.isSymbolicLink(file));
                     System.out.println("Is Directory: " + Files.isDirectory(file));
@@ -81,10 +96,13 @@ public class PlayWithPaths {
             }
         }
 
-        // Returns the concatenation of abcPath and path2
-        // Returns just abcPath if path2 is empty
-        // Returns just abcPath if path2 is absolute path
-        // Otherwise, returns the concatenation of abcPath and path2
+        // path1 -> abcPath
+        // path2 -> xyzPath
+        // Returns the concatenation of path1 and path2
+        // Returns  path1 if path2 is empty
+        // Returns path2 if path2 is absolute. In other words, you can't add a relative path to
+        // an absolute path
+        // Otherwise, returns the concatenation of bcPath path1 and path2
         Path path3 = abcPath.resolve(xyzPath);
 
         // Resolves path2 against the  parent of abcPath
@@ -95,15 +113,33 @@ public class PlayWithPaths {
 
         // Returns relative path of abcPath to path2
         // Throws exception if either of the paths are absolute
+        // what steps would abcPath require to reach xyzPath
+        // both the abcPath and xyzPath have to be absolute or relative
         Path path4 = abcPath.relativize(xyzPath);
 
         System.out.println(path4);
 
 
-        Path path5 = Paths.get("/examples/../../examples");
+        /// removed the redundancies like the parent directory ../
+        // and the current directory ./
+        var path5 = Paths.get("/pony/../weather.txt");
+        var path6 = Paths.get("/weather.txt");
+        System.out.println(path5.equals(path6));
+        System.out.println("Path5 == Path6: " + path5.normalize().equals(path6.normalize()));
 
         Path normalizedPath = path5.normalize();
         System.out.println(normalizedPath);
 
+
+        //Real Path demo
+
+        System.out.println("Real Paths Demo");
+        try {
+            // Normalizes the and returns the absolute path
+            System.out.println(Paths.get("IO/examples/./paths/./abc.txt").toRealPath());
+            System.out.println("Present Working Directory: " + Paths.get(".").toRealPath());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
