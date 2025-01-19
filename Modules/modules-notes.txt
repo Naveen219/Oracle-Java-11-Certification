@@ -1,0 +1,5 @@
+Named module: A named module is one containing a module-info file. It's on the module path rather than on the classpath
+
+Module info file contains the packages that the module exports and the dependencies the module depends on
+
+Automatic module:

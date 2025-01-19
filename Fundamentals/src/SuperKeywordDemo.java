@@ -40,14 +40,18 @@ class Child extends Parent {
         this.name = name;
         System.out.println("I'm the parameterized constructor of the child class");
     }
-    public void print() {
+   public void print() {
         System.out.println("Hello, I'm the print method in the child class");
     }
 }
 
 public class SuperKeywordDemo {
     public static void main(String[] args) {
-        new Child("Naveen");
+        var child =  new Child("Naveen");
+        // refers to the child class object at runtime
+        System.out.println(child.getClass());
+        // invokes the child class method
+        child.print();
     }
 
 }
