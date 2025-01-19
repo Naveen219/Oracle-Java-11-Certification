@@ -6,8 +6,22 @@ public class ResourceBundleDemo {
     public static void main(String[] args) {
         var us = new Locale("en", "US");
         var france = new Locale("fr", "FR");
+        var india = new Locale( "hi");
+        var india_telugu = new Locale("te", "IN");
+        var german = new Locale("ge", "GE");
+        Locale.setDefault(german);
+
+        // loads properties from Zoo_en.properties
         printWelcomeMessage(us);
+        //loads properties from Zoo_fr.properties
         printWelcomeMessage(france);
+        //loads properties fro Zoo_hi.properties
+        printWelcomeMessage(india);
+        //loads properties from Zoo_te_IN.properties
+        printWelcomeMessage(india_telugu);
+        //loads properties from Zoo.properties
+        printWelcomeMessage(german);
+
 
 
         /*
