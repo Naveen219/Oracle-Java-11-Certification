@@ -56,6 +56,7 @@ public class FunctionalInterfaceDemo {
         System.out.println(employeeList);
         Employee []employees = employeeList.toArray(new Employee[employeeList.size()]);
 
+
         Arrays.stream(employees).forEach(System.out::println);
 
         List<Employee> employeeList1 = Arrays.asList(employees);

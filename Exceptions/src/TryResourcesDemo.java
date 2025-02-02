@@ -9,6 +9,7 @@ class MyFileReader implements  AutoCloseable {
         System.out.println("Closed: " + tag);
     }
 }
+// Reference: https://jenkov.com/tutorials/java-exception-handling/try-with-resources.html
 public class TryResourcesDemo {
 
     public static void main(String[] args) {

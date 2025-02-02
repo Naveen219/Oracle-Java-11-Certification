@@ -14,6 +14,7 @@ public class LocalizingDatesDemo {
         // prints the dateTime for the given locale
         System.out.println(dtf.withLocale(locale).format(dateTime));
     }
+
     public static void main(String[] args) {
         Locale.setDefault(new Locale("en", "US"));
         var italy = new Locale("it", "IT");
@@ -30,7 +31,6 @@ public class LocalizingDatesDemo {
         // prints 10/20/20, 3:12 PM
         // 20/10/20, 15:12
         print(DateTimeFormatter.ofLocalizedDateTime(SHORT, SHORT), dt, italy);
-
 
 
     }

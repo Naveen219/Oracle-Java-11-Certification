@@ -102,7 +102,7 @@ public class PlayWithPaths {
         // Returns  path1 if path2 is empty
         // Returns path2 if path2 is absolute. In other words, you can't add a relative path to
         // an absolute path
-        // Otherwise, returns the concatenation of bcPath path1 and path2
+        // Otherwise, returns the concatenation of abcPath path1 and path2
         Path path3 = abcPath.resolve(xyzPath);
 
         // Resolves path2 against the  parent of abcPath
@@ -111,10 +111,11 @@ public class PlayWithPaths {
         System.out.println("Resolve Sibling Path: " + resolveSiblingPath);
         System.out.println(path3);
 
-        // Returns relative path of abcPath to path2
+        // Returns relative path of abcPath to xyzPath
         // Throws exception if either of the paths are absolute
         // what steps would abcPath require to reach xyzPath
         // both the abcPath and xyzPath have to be absolute or relative
+        // if they are absolute, they should have the same root
         Path path4 = abcPath.relativize(xyzPath);
 
         System.out.println(path4);

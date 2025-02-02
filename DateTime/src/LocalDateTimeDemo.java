@@ -61,7 +61,7 @@ public class LocalDateTimeDemo {
         System.out.println(customDft.format(localDateTime2));
 
         // Adding Custom Text Values
-        // the text 'at' is ignored as it's wrapped with single quotes
+        // the text 'at' is ignored as it's wrapped within single quotes
         var dft2 = DateTimeFormatter.ofPattern("MMMM dd, yyyy 'at' hh:mm:ss a");
 
         // December 28, 2024 at 11:30:20 PM

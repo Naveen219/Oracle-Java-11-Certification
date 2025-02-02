@@ -5,12 +5,13 @@ public class LocaleCategoryDemo {
     public static void printCurrency(Locale locale, double money) {
         System.out.println(NumberFormat.getCurrencyInstance().format(money) + " " + locale.getDisplayLanguage());
     }
+
     public static void main(String[] args) {
-       var spain = new Locale("es", "ES");
-       var money = 1.23;
+        var spain = new Locale("es", "ES");
+        var money = 1.23;
 
 
-       // print with default locale
+        // print with default locale
         Locale.setDefault(new Locale("en", "US"));
         printCurrency(spain, money); // $1.23, Spanish
 

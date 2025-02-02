@@ -32,7 +32,7 @@ public class FileTraversalDemo {
                     .mapToLong(FileTraversalDemo::getSize)
                     .sum();
             System.out.println(size);
-            System.out.printf("Tatal size %.2f kilobytes", (size / 1000.0));
+            System.out.printf("Total size %.2f kilobytes", (size / 1000.0));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -58,7 +58,7 @@ public class FileTraversalDemo {
 
 
         // Files.readAllLines() could result in an OutOfMemoryError as the method tries to all the
-        // content into the memroy at one short
+        // content into the memory at one short
 
 
         // Files.lines is use to read the content and process lazily which means only a small

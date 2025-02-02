@@ -20,7 +20,6 @@ public class LocalizingNumbersDemo {
         System.out.println(NumberFormat.getNumberInstance(germanLocale).format(23_000_000_000L));
 
 
-
         // creating indian locale object
         Locale locale = new Locale.Builder()
                 .setLanguage("hi")
@@ -50,10 +49,6 @@ public class LocalizingNumbersDemo {
         System.out.println(f2.format(value));
         NumberFormat f3 = new DecimalFormat("$#,###,###.##");
         System.out.println(f3.format(value));
-
-
-
-
 
 
     }

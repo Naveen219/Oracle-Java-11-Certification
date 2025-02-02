@@ -48,7 +48,7 @@ public class ResourceBundleDemo {
          */
         // the value "Zoo" should match with the file prefix
         var rb = ResourceBundle.getBundle("Zoo", locale);
-        System.out.println(rb.getString("hello"));
+        System.out.println(rb.getObject("hello"));
         System.out.println(rb.getString("open"));
     }
 }
