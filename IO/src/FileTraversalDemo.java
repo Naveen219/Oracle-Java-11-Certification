@@ -57,11 +57,11 @@ public class FileTraversalDemo {
 
 
 
-        // Files.readAllLines() could result in an OutOfMemoryError as the method tries to all the
+        // Files.readAllLines() could result in an OutOfMemoryError as the method tries to load all the
         // content into the memory at one short
 
 
-        // Files.lines is use to read the content and process lazily which means only a small
+        // Files.lines is used to read the content and process lazily which means only a small
         // portion of the file is stored in memory at any given time
         Path path = Paths.get("IO/examples/months.txt");
         try (var s = Files.lines(path)) {

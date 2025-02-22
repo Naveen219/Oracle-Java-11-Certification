@@ -15,13 +15,15 @@ public class PrimitiveStreamsDemo {
 
         Stream<Integer> stream2 = Stream.of(1, 2, 3);
         // converting Stream<Integer> to IntStream
+        System.out.print("Sum: ");
         System.out.println(stream2.mapToInt(x -> x).sum()); // prints 6
         IntStream intStream = IntStream.of(1, 2, 3);
         OptionalDouble avg = intStream.average();
-        System.out.println(avg.getAsDouble());
+        System.out.print("Average: ");
+        avg.ifPresent(System.out::println);
 
 
-        // converts the primitive stream into the normal stream
+        // converts a  primitive stream into a normal stream
         Stream<Integer> stream4 = IntStream.of(1, 2, 3).boxed();
 
         stream4.forEach(System.out::println);
@@ -38,9 +40,9 @@ public class PrimitiveStreamsDemo {
         // sames as x = 0.5
         // x = x / 0.5 performed for specified number of times
         var fractions = DoubleStream.iterate(.5, d -> d / 2);
-        // limits to 3 numbers or prints just the 3 numbers in the infinite stream
+        // limits to 3 numbers or prints just the first 3 numbers in the infinite stream
         random.limit(3).forEach(System.out::println);
-        // limits to 3 numbers or prints just the 3 numbers for every computation
+        // limits to 3 numbers or prints just the first 3 numbers after computation
         fractions.limit(3).forEach(System.out::println); // 0.5, 0.25, 0.125
 
         System.out.println("Exclusive Range");

@@ -56,7 +56,7 @@ public class LockFrameworkDemo {
     }
 
     public static void main(String[] args) {
-        Lock lock = new ReentrantLock(true);
+        Lock lock = new ReentrantLock(false);
         new Thread(() -> printMessage(lock)).start();
         for (int i = 0; i < 5; i++) {
             new Thread(() -> printMessage(lock)).start();
