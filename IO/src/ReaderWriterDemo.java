@@ -5,14 +5,13 @@ import java.io.IOException;
 public class ReaderWriterDemo {
     public static void main(String[] args) {
         /**
-         Reader is an abstract class that contains a read method to read the date in bytes
+         Reader is an abstract class that contains a read method to read the data in bytes
          int read() throws IOException
 
          FileReader     -> Reads file data as characters
 
-         BufferedReader -> Reads character data from an existing Reader in a a buffered manner,
+         BufferedReader -> Reads character data from an existing Reader in a buffered manner,
          which improves efficiency and performance
-
 
          */
 

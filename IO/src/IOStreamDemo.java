@@ -8,7 +8,7 @@ public class IOStreamDemo {
 
          FileInputStream     -> Reads file data as bytes
 
-         BufferedInputStream -> Reads byte data from an existing InputStream in a a buffered manner,
+         BufferedInputStream -> Reads byte data from an existing InputStream in  a buffered manner,
                                 which improves efficiency and performance
 
          ObjectInputStream -> Deserializes primitive Java data types and graphs of Java objects to an existing
@@ -32,14 +32,12 @@ public class IOStreamDemo {
             byte []buffer = new byte[10];
             int lengthRead;
             while ((lengthRead = bufferedInputStream.read(buffer)) > 0) {
-                System.out.println(lengthRead);
                 bufferedOutputStream.write(buffer, 0, lengthRead);
 
-                // to flush output to the file in each iteration instead of flusing the output at the end
+                // to flush output to the file in each iteration instead of flushing the output at the end
                 // when the close() method gets called after the try block execution because of try resources statement
                 bufferedOutputStream.flush();
             }
-
 
         } catch (IOException exception) {
             exception.printStackTrace();

@@ -102,7 +102,7 @@ public class PlayWithPaths {
         // Returns  path1 if path2 is empty
         // Returns path2 if path2 is absolute. In other words, you can't add a relative path to
         // an absolute path
-        // Otherwise, returns the concatenation of abcPath path1 and path2
+        // Otherwise, returns the concatenation of  path1 and path2
         Path path3 = abcPath.resolve(xyzPath);
 
         // Resolves path2 against the  parent of abcPath

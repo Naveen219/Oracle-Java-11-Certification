@@ -32,7 +32,7 @@ public class NIOFilesDemo {
         }
         try {
             //The createDirectories() works just like the java.io.File method mkdirs(), in that it creates the
-            //target directory along with any nonexistent parent directories leading up to the path. If all of the directories
+            //target directory along with any nonexistent parent directories leading up to the path. If all the directories
             //already exist, createDirectories() will simply complete without doing anything.
             System.out.println("Directories created: "  + Files.createDirectories(path4));
         } catch (IOException e) {
@@ -43,7 +43,7 @@ public class NIOFilesDemo {
         Path path6 = Paths.get("IO/examples/days-copy.txt");
         //
         try {
-            // willl throw an exception if the target already exists without the
+            // will throw an exception if the target already exists without the
             // Replace existing option
             //throws an exception if the source file doesn't exist
             System.out.println(Files.copy(path5, path6, StandardCopyOption.REPLACE_EXISTING));
@@ -67,9 +67,9 @@ public class NIOFilesDemo {
         }
 
         try {
-            // deletes the file if it exists or else it thrown an FileNotFoundException
+            // deletes the file if it exists or else it throws an FileNotFoundException
             // To delete a directory, it must be empty
-            // If the path is a symoblic link, the symbolic link will not be deleted,
+            // If the path is a symbolic link, the symbolic link will not be deleted,
             // not the path that the symbolic points to
             Files.delete(Paths.get("IO/examples/example.txt"));
         } catch (IOException e) {
