@@ -1,3 +1,5 @@
+package concurrency.problems;
+
 class Worker {
     private boolean finished = false;
 
