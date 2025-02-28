@@ -136,7 +136,7 @@ public class PlayWithPaths {
 
         System.out.println("Real Paths Demo");
         try {
-            // Normalizes the and returns the absolute path
+            // Normalizes and returns the absolute path
             System.out.println(Paths.get("IO/examples/./paths/./abc.txt").toRealPath());
             System.out.println("Present Working Directory: " + Paths.get(".").toRealPath());
         } catch (IOException e) {

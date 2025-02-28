@@ -28,9 +28,11 @@ public class PlayWithFiles {
             System.out.println("Path : " + file1.getPath());
 
             // prints the file path passed to the file constructor
+            // doesn't check if the file exists
             System.out.println("Absolute Path: " + file1.getAbsolutePath());
 
             // prints the path that is a valid system path
+            // throws an exception if the absolute path for the file doesn't exist
             System.out.println("Canonical Path: " + file1.getCanonicalPath());
 
             System.out.println(file2);

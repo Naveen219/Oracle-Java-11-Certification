@@ -47,9 +47,8 @@ public class FileTraversalDemo {
         // searches the given path and prints all .txt files with a size of at least 5 bytes ,
         // using a depth limit of 10
         System.out.println("Find Method Demo: ");
-        try (var s = Files.find(source, 10, (p, a) -> {
-            return a.isRegularFile() && p.toString().endsWith(".txt") && a.size() > minSize;
-        })) {
+        try (var s = Files.find(source, 1, (p, a) ->
+                a.isRegularFile() && p.toString().endsWith(".txt") && a.size() > minSize)) {
             s.forEach(System.out::println);
         } catch (IOException e) {
             e.printStackTrace();

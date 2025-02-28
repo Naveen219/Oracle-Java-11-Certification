@@ -40,7 +40,7 @@ public class LockFrameworkDemo {
             // if a thread can't acquire a lock, it waits  for a maximum of 2 seconds to acquire it
             // this is not possible with the synchronized keyword as the other threads have to wait for
             // the main thread or first thread to finish its synchronized block execution
-            if (lock.tryLock(2, TimeUnit.SECONDS)) {
+            if (lock.tryLock(2,TimeUnit.SECONDS)) {
                 try {
                     System.out.println("Thread: " + Thread.currentThread().getId() + " Lock obtained, entering protected code");
                     System.out.println("Hello, How are you doing today?");
@@ -50,7 +50,8 @@ public class LockFrameworkDemo {
             } else {
                 System.out.println("Unable to acquire lock, doing something else");
             }
-        } catch (InterruptedException e) {
+        }
+        catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
@@ -58,7 +59,7 @@ public class LockFrameworkDemo {
     public static void main(String[] args) {
         Lock lock = new ReentrantLock(false);
         new Thread(() -> printMessage(lock)).start();
-        for (int i = 0; i < 5; i++) {
+        for (int i = 1; i <= 5; i++) {
             new Thread(() -> printMessage(lock)).start();
         }
     }

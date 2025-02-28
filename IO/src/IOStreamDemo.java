@@ -9,18 +9,30 @@ public class IOStreamDemo {
          FileInputStream     -> Reads file data as bytes
 
          BufferedInputStream -> Reads byte data from an existing InputStream in  a buffered manner,
-                                which improves efficiency and performance
+         which improves efficiency and performance
 
          ObjectInputStream -> Deserializes primitive Java data types and graphs of Java objects to an existing
-                                InputStream
+         InputStream
 
          */
 
+        /**
+         OutputStream is an abstract class that contains a write method to write the data in bytes
+         void write(int bytes) throws IOException
+
+         FileOutputStream -> Writes file data as bytes
+
+         BufferedOutputStream -> Writes byte data from an existing InputStream in a a buffered manner,
+         which improves efficiency and performance
+
+         ObjectOutputStream -> Serializes primitive Java data types and graphs of Java objects to an existing
+         OutputStream
+         **/
         try (var inputStream = new FileInputStream("IO/examples/greeting.txt")
-             ;var outputStream = new FileOutputStream("IO/examples/greetings-copy.txt")) {
+             ; var outputStream = new FileOutputStream("IO/examples/greetings-copy.txt")) {
             int b;
             while ((b = inputStream.read()) != -1) {
-                System.out.print((char)b);
+                System.out.print((char) b);
                 outputStream.write(b);
             }
         } catch (IOException exception) {
@@ -28,8 +40,8 @@ public class IOStreamDemo {
         }
 
         try (var bufferedInputStream = new BufferedInputStream(new FileInputStream("IO/examples/months.txt"));
-             var bufferedOutputStream = new BufferedOutputStream(new FileOutputStream("IO/examples/months-copy.txt")))   {
-            byte []buffer = new byte[10];
+             var bufferedOutputStream = new BufferedOutputStream(new FileOutputStream("IO/examples/months-copy.txt"))) {
+            byte[] buffer = new byte[10];
             int lengthRead;
             while ((lengthRead = bufferedInputStream.read(buffer)) > 0) {
                 bufferedOutputStream.write(buffer, 0, lengthRead);
@@ -43,21 +55,6 @@ public class IOStreamDemo {
             exception.printStackTrace();
         }
 
-        /**
-         OutputStream is an abstract class that contains a write method to write the data in bytes
-         void write(int bytes) throws IOException
-
-         FileOutputStream -> Writes file data as bytes
-
-         BufferedOutputStream -> Writes byte data from an existing InputStream in a a buffered manner,
-                                 which improves efficiency and performance
-
-         ObjectOutputStream -> Serializes primitive Java data types and graphs of Java objects to an existing
-                                OutputStream
-
-
-
-         **/
 
     }
 }

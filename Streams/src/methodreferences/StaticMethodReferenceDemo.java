@@ -11,7 +11,7 @@ class StringUtils {
 public class StaticMethodReferenceDemo {
 
     // Method references are a special type of lambda expressions
-    // They're are often used to create simple lambda expressions
+    // They are often used to create simple lambda expressions
     // by referencing existing methods
     public static void main(String[] args) {
         List<String> animals = Arrays.asList("Lion", "Tiger", "Monkey", "Elephant");
