@@ -30,7 +30,7 @@ public class CustomExceptionDemo {
             System.out.println(arr[5]);
         }
         catch (ArithmeticException | ArrayIndexOutOfBoundsException ex) {
-            // handles ArithmeticException and ArrayIndexOutOfBoundsException, but not a good practise a handle exceptions
+            // handles ArithmeticException and ArrayIndexOutOfBoundsException, but not a good practise to a handle exceptions
             // Exceptions that are related, cannot be handled this way
             // FileNotFoundException is a child class of IOException
             // catch(FileNotFoundException | IOException) throws a compile time error

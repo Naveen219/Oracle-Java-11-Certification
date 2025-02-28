@@ -8,6 +8,7 @@ public class CachedThreadPoolDemo {
         // available
         ExecutorService service = Executors.newCachedThreadPool();
 
+        // prints the numbers of core processors in your cpu
         System.out.println(Runtime.getRuntime().availableProcessors());
 
         Runnable task1 = () -> {
@@ -19,7 +20,6 @@ public class CachedThreadPoolDemo {
             System.out.println("This pleasant morning");
         };
 
-        // prints the numbers of core processors in your cpu
 
         service.execute(task1);
         service.execute(task2);

@@ -5,10 +5,10 @@ public class FixedThreadPoolDemo {
     public static void main(String[] args) {
         // creates a thread pool that reuses a fixed number of threads
         // operating off a shared unbounded queue
-        // as long as the the number of tasks is less than the number of threads
+        // as long as the number of tasks is less than the number of threads
         // all tasks will be executed concurrently. If at any point the number of tasks
         // exceeds the number of threads in the pool, they will wait in a similar manner
-        // to that of single thead executor
+        // to that of single thread executor
         ExecutorService service = Executors.newFixedThreadPool(4);
 
 

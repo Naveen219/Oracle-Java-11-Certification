@@ -48,7 +48,7 @@ public class CallableDemo {
         if (service != null) {
             try {
                 // waits for all tasks to finish their execution for a maximum of 1 min
-                // throws Interrupted Exception if execution of tasks time out
+                // throws Interrupted Exception if execution of tasks times out
                 service.awaitTermination(1, TimeUnit.MINUTES);
             } catch (InterruptedException e) {
                 e.printStackTrace();

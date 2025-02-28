@@ -17,11 +17,11 @@ public class ScheduledExecutorService {
             e.printStackTrace();
         }
         // creates a new task and submits to the executor every period
-        // regardless of whether the previous task finished
+        // regardless of the previous task's execution status
         java.util.concurrent.ScheduledExecutorService service2 = Executors.newSingleThreadScheduledExecutor();
         service2.scheduleAtFixedRate(task1, 2, 5, TimeUnit.SECONDS);
 
-       //creates a new task only after the previous task has finished
+       //creates a new task only after the previous task has finished its execution
         service2.scheduleWithFixedDelay(task1, 2, 5, TimeUnit.SECONDS);
 
         if (service != null) service.shutdown();

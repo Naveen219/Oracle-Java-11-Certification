@@ -56,7 +56,7 @@ public class ParallelStreamsDemo {
         System.out.println(list.stream().findAny().get());
 
         // prints a random element from the stream
-        System.out.println(list.parallelStream().findAny().get());
+        list.parallelStream().findAny().ifPresent(System.out::println);
 
         // always prints -21, as the stream is serial
         System.out.println(list.stream().reduce(0, (a, b) -> (a - b)));

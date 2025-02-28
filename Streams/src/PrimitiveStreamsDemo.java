@@ -1,5 +1,6 @@
 import java.util.IntSummaryStatistics;
 import java.util.OptionalDouble;
+import java.util.function.DoubleUnaryOperator;
 import java.util.function.Function;
 import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
@@ -23,7 +24,7 @@ public class PrimitiveStreamsDemo {
         avg.ifPresent(System.out::println);
 
 
-        // converts a  primitive stream into a normal stream
+        // converts a primitive stream into a normal stream
         Stream<Integer> stream4 = IntStream.of(1, 2, 3).boxed();
 
         stream4.forEach(System.out::println);

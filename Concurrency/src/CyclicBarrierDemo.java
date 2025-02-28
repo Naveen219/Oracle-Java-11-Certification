@@ -40,12 +40,12 @@ public class CyclicBarrierDemo {
             service = Executors.newFixedThreadPool(4);
             var cyclicBarrierDemo = new CyclicBarrierDemo();
             // thread pool size has to be at least as large as CyclicBarrier limit value,
-            // other wise, the code will hang indefinitely. The barrier would never be reached
+            // otherwise, the code will hang indefinitely. The barrier would never be reached
             // as the only threads available in the pool are stuck waiting for the barrier to complete.
             // This would result in a deadlock
             var c1 = new CyclicBarrier(4);
 
-            // the lambba function gets executed after all the threads finish executing
+            // the lambda function gets executed after all the threads finish executing
             // the cleanPen method
             var c2 = new CyclicBarrier(4, () -> System.out.println("***** Pen Cleaned *****!"));
             for (int i = 0; i < 4; i++) {
