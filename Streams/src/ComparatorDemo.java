@@ -31,7 +31,7 @@ public class ComparatorDemo {
                     new Person("Naveen", 24),
                     new Person("Kohli", 25),
                     new Person("Dhoni", 24),
-                    new Person("Rohith", 25)
+                    new Person("Rohit", 25)
         );
         // sorts the personsList based on the age. If two people have the same age, they get sorted based on thir name
         Comparator<Person> ageComparator = Comparator.comparingInt(Person::getAge);
