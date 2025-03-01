@@ -53,7 +53,7 @@ public class LambdaDemo {
         List<Employee> employeeList = List.of(new Employee(23,"Naveen Kumar"),
                                               new Employee(24, "Virat Kohli"),
                                               new Employee(35, "MS Dhoni"),
-                                              new Employee(40, "Virendar Sehwag"));
+                                              new Employee(40, "Rohit Sharma"));
 
 
 //        EmployeeFilter<Employee> ageFilter = e -> e.getAge() < 25;

@@ -25,7 +25,7 @@ class Company implements Cloneable {
 }
 public class SecureCodingPracticesDemo {
     public static void main(String[] args) throws Exception {
-        List<String> employees = new ArrayList<>(Arrays.asList("Naveen", "Sehwag", "Virat","Dhoni"));
+        List<String> employees = new ArrayList<>(Arrays.asList("Naveen", "Rohit", "Virat","Dhoni"));
         Company company = new Company(employees);
         Company companyClone = (Company)company.clone();
        // System.out.println(companyClone.getEmployeeNames());

@@ -14,10 +14,11 @@ public class TryResourcesDemo {
 
     public static void main(String[] args) {
         // effectively final -> can be initialized only once before its used
+        final var bookReader = new MyFileReader("Monkey");
         var bookReader2 = new MyFileReader("Dog");
         // all the variables declared in try-resources block are implicitly final
         // any attempt to reinitialize them will result in a compile time error
-        try (var bookReader = new MyFileReader("Monkey");bookReader2) {
+        try (bookReader; bookReader2) {
             System.out.println("Try Block");
             // Resources are closed in the reverse order of their declaration
             // before the control reaches any of the catch or finally blocks

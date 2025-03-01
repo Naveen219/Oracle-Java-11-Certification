@@ -18,9 +18,9 @@ class Sing {
      // default, default value should be a compile time a constant, cannot be a null or new String()
     // "" is a valid default value
     // the element type must be primitive type, a String, a Class, an enum, another
-    // annotation or an array of any of these types. Note that this excludes wrapper
+    // annotation or an array any of these types. Note that this excludes wrapper
     // classes and arrays of arrays
-     String batsman() default "Sehwag";
+     String batsman() default "Dhoni";
      //String batsman default "";
 //     String batsman();
 //    String  value();
